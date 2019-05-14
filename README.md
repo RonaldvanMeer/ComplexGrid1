@@ -7,7 +7,7 @@ there are 2 project folders:
 2) ComplexGrid1
 
 
-ComplexGrid has an editor template for the "LocationViewModel" inside the "DepartmentViewModel" 
-ComplexGrid1 has an editor template for the "LocationId" inside the "DepartmentViewModel"
+1) ComplexGrid has an editor template for the "LocationViewModel" inside the "DepartmentViewModel" 
+2) ComplexGrid1 has an editor template for the "LocationId" inside the "DepartmentViewModel"
 
 both projects cannot bind data from the editor template towards the "DepartmentViewModel" in edit or create.
