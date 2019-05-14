@@ -7,19 +7,24 @@
 
 @(Html.Kendo().Grid<DepartmentViewModel>().
         Name("ComplexGrid")
-        .Columns(columns => {
-            columns.Command(c => { c.Edit(); });
+        .Columns(columns =>
+            {
+                columns.Command(c => { c.Edit(); });
             columns.Bound(c => c.Id);
             columns.Bound(c => c.Department);
             columns.Bound(c => c.Location).ClientTemplate("#= Location == null ? '' : Location.Location #");
             columns.Bound(c => c.Active);
         })
-        .ToolBar(toolbar => {
+        .ToolBar(toolbar =>
+            {
             toolbar.Create();
         })
-        .DataSource(datasource => {
-            datasource.Ajax().Read(read =>
-            {
-                read.Action("Read_Departments", "Home");
-            });
-        }))
+        .DataSource(datasource =>
+            datasource.Ajax()
+                        .Read(read => read.Action("Read_Departments", "Home"))
+                        .Create(create => create.Action("Create_Departments", "Home"))
+                        .Update(update => update.Action("Update_Departments", "Home"))
+                        .Model(model => model.Id(p => p.Id))
+    )
+
+)
