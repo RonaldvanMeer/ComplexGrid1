@@ -1,0 +1,17 @@
+﻿@model TestComplexGrid.ViewModels.LocationViewModel
+
+@(Html.Kendo()
+       .ComboBox()
+       .Name("Location")
+       .DataTextField("Location")
+       .DataValueField("Location")
+       .ValuePrimitive(true)
+       .DataSource(dataSource =>
+       {
+            dataSource.Read(read =>
+            {
+                read.Action("Read_Locations", "Home");
+           });
+       })
+       .Placeholder("Please Select Location")
+)

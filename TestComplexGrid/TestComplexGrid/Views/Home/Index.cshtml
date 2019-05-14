@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+@(Html.Kendo().Grid<DepartmentViewModel>().
+        Name("ComplexGrid")
+        .Columns(columns => {
+            columns.Command(c => { c.Edit(); });
+            columns.Bound(c => c.Id);
+            columns.Bound(c => c.Department);
+            columns.Bound(c => c.Location).ClientTemplate("#= Location == null ? '' : Location.Location #");
+            columns.Bound(c => c.Active);
+        })
+        .ToolBar(toolbar => {
+            toolbar.Create();
+        })
+        .DataSource(datasource => {
+            datasource.Ajax().Read(read =>
+            {
+                read.Action("Read_Departments", "Home");
+            });
+        }))
