@@ -11,3 +11,8 @@ there are 2 project folders:
 2) ComplexGrid1 has an editor template for the "LocationId" inside the "DepartmentViewModel"
 
 both projects cannot bind data from the editor template towards the "DepartmentViewModel" in edit or create.
+
+---
+Updated
+
+1) Fixed -> binding of complex object to new/edit record
