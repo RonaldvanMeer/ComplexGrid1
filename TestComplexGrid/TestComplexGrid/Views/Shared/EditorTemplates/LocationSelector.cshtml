@@ -1,9 +1,9 @@
-﻿@(Html.Kendo()
-       .ComboBox()
-       .Name("Location")
+﻿@model LocationViewModel
+
+@(Html.Kendo()
+       .ComboBoxFor(m => m)
        .DataTextField("Location")
        .DataValueField("Id")
-       .ValuePrimitive(true)
        .DataSource(dataSource =>
        {
             dataSource.Read(read =>
