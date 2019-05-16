@@ -1,11 +1,9 @@
 ﻿@model TestComplexGrid.ViewModels.LocationViewModel
 
 @(Html.Kendo()
-       .ComboBox()
-       .Name("LocationId")
+       .ComboBoxFor(m => m)
        .DataTextField("Location")
        .DataValueField("Id")
-       .ValuePrimitive(true)
        .DataSource(dataSource =>
        {
             dataSource.Read(read =>

@@ -16,3 +16,4 @@ both projects cannot bind data from the editor template towards the "DepartmentV
 Updated
 
 1) Fixed -> binding of complex object to new/edit record
+2) Fixed -> binding of integer to new/edit record -> 0 value shown as text when new record is added
